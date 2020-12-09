@@ -12,7 +12,7 @@ Before running the scripts, the file containing the [CFD result](https://syncand
 * numpy, scipy, tensorflow==1.15, matplotlib, h5py, pandas
 
 # Running the scripts
-We provide two scripts that are running out of the box:
+We provide two scripts that are running out of the box located in `scr`:
 
 * `train_model.py` contains the implementaion of the PINN class and the training routine. When running this script, the point distribution is generated and displayed for multiple time snapshots. Subsequently, the PINN is instantiated and trained using the (default) hyperparameters as described in the paper. Note that when using the default hyperparameters and amount of training points, a single epoch takes about 4 seconds on a GeForce RTX 2080Ti and thus may take substantially longer when running on a CPU. In this case the network size and or amount of training points should be reduced by the user by setting the corresponding variables within the `main` function. During training, this script will generate a new folder called `checkpoints`, where, at user defined epoch intervals, the model is saved. Please refer to the respective function descriptions for further details.
 
