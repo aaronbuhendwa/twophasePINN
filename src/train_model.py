@@ -502,9 +502,9 @@ def main():
     # SETTING UP SESSION
     sess = tf.Session()
     
-    # PARAMETRS FOR THE TRAINING DATA
-    NOP_a = (500, 400)                                                      # interface, domain
-    NOP_PDE = (400, 500, 500)                                             # interface, nearfield, domain
+    # PARAMETRS FOR THE TRAINING DATA - NUMBER OF POINTS (NOP) FOR VARIOUS LOSSES
+    NOP_a = (500, 400)                                                      
+    NOP_PDE = (400, 2000, 3000)                                             
     NOP_north = (20, 20)                         
     NOP_south = (20, 20)
     NOP_east = (20, 20)    
@@ -514,8 +514,8 @@ def main():
 
     # NEURAL NETWORK ARCHITECTURE
     dtype = tf.float32
-    no_layers = 5
-    hidden_layers = [100]*no_layers
+    no_layers = 8
+    hidden_layers = [350]*no_layers
     activation_functions = dict(tanh = range(1,no_layers+1))                # dict assigning layer activation function to layer number
     
     # ADAPIVE ACTIVATION COEFFICIENTS SETUP

@@ -1,5 +1,4 @@
 */__pycache__
-checkpoint/*
 cfd_data/*
-!checkpoint/.gitkeep
 !cfd_data/.gitkeep
+src/checkpoints

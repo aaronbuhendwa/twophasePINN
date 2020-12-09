@@ -183,12 +183,9 @@ def get_training_data(NOP_A, NOP_PDE, NOP_north, NOP_south, NOP_east, NOP_west):
     used to distribute the points. They are manually selected within this function.
 
     Args:
-        NOP_A: Tuple containig amount of training points for the volume fraction for the interface refinement (index 0)
-            and the rest of the domain (index 1)
-        NOP_PDE: Tuple containig amount of training points for PDEs for the interface refinement (index 0)
-            the nearfield refinement (index 1) and the rest of the domain (index 2)
-        NOP_boundaries: Tuple containig amount of points for the boundary condition. (index 0) amount spatial points
-            (index 1) amount time snapshots '''
+        NOP_A: Points for the volume fraction. Tuple containig amount of training points for the interface refinement (index 0) and the rest of the domain (index 1) per time snapshot
+        NOP_PDE: Points for the PDEs. Tuple containig amount of training points for the interface refinement (index 0) the nearfield refinement (index 1) and the rest of the domain (index 2) per time snapshot
+        NOP_boundaries: Tuple containig amount of points for the boundary conditions. (index 0) amount spatial points (index 1) amount of time snapshots '''
 
     path = "../cfd_data/rising_bubble.h5"
 
@@ -201,7 +198,7 @@ def get_training_data(NOP_A, NOP_PDE, NOP_north, NOP_south, NOP_east, NOP_west):
 
     # TIME SNAPSHOT SELECTION
     indices = np.arange(len(times))
-    indices = np.sort(np.concatenate([indices[0:30:30], indices[30:100:10], indices[100::10], indices[1:3]], axis=0))
+    indices = np.sort(np.concatenate([indices[0:30:15], indices[30:100:5], indices[100::5], indices[1:3]], axis=0))
     times = times[indices]
     levelset = levelset[indices]
 
@@ -252,7 +249,7 @@ def get_training_data(NOP_A, NOP_PDE, NOP_north, NOP_south, NOP_east, NOP_west):
         ax[0].set_aspect("equal")
         ax[1].set_aspect("equal")
         ax[2].set_aspect("equal")
-        # plt.show()
+        plt.show()
     
     print("Assembling data frames\n")
     data_EW = pd.DataFrame(data=np.hstack([data_east[:,0:2], data_west[:,0:3]]), columns=["x_E", "y_E", "x_W", "y_W", "t_EW"])
