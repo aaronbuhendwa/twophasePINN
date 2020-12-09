@@ -10,7 +10,7 @@ motion using physics-informed neural networks" by Aaron B. Buhendwa, Stefan Adam
 If there are any questions regarding the code please contact us by [mail](mailto:aaron.buhendwa@tum.de).
 # Prerequisites
 Before running the scripts, the file containing the [CFD result](https://syncandshare.lrz.de/getlink/fi2mzU79pAJa8LXFtCgFsozR/rising_bubble.h5) has to be downloaded and put into the folder `cfd_data`. Furthermore, your python environment must have the following packages installed:
-* numpy, scipy, tensorflow==1.15, matplotlib, h5py, pandas
+* numpy, scipy, tensorflow==1.15, h5py==2.10, matplotlib, pandas
 
 # Running the scripts
 We provide two scripts that are running out of the box located in `src`:
