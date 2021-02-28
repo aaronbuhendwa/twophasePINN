@@ -498,7 +498,12 @@ def compute_batch_size(training_data, number_of_batches):
     return math.ceil(number_of_samples/number_of_batches)
 
 def main():
- 
+    ''' This scripts trains a PINN for the rising bubble case in <paper_cite_TBA>. The user may define the following:
+    1) Number of points for various losses (check function description)
+    2) The neural network architecture, i.e. number of hidden layers and the nodes in each hidden layer
+    3) The training hyperparameters, i.e. number of epochs, batch size and learning rates
+    '''
+
     # SETTING UP SESSION
     sess = tf.Session()
     
@@ -509,7 +514,7 @@ def main():
     NOP_south = (20, 20)
     NOP_east = (20, 20)    
     NOP_west = (20, 20)
-
+    
     training_data = get_training_data(NOP_a, NOP_PDE, NOP_north, NOP_south, NOP_east, NOP_west)
 
     # NEURAL NETWORK ARCHITECTURE
