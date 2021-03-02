@@ -492,7 +492,7 @@ class TwoPhasePinn:
                         
 def compute_batch_size(training_data, number_of_batches):
 
-    ''' Computes the batch size from number of patches and amount of training samples '''
+    ''' Computes the batch size from number of batches and amount of training samples '''
 
     number_of_samples = sum([len(training_data[key]) for key in training_data])
     return math.ceil(number_of_samples/number_of_batches)
