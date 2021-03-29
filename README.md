@@ -21,4 +21,4 @@ We provide two scripts that are running out of the box located in `src`:
 animating contourplots of the velocity and pressure. By default, this script will load the PINN that is located in the directory `trained_model`. We provide an already trained model in this directory, so that this script may be run out of the box.
 
 # Citation
-TBA
+DOI: 10.1016/j.mlwa.2021.100029
