@@ -193,7 +193,7 @@ def get_training_data(NOP_A, NOP_PDE, NOP_north, NOP_south, NOP_east, NOP_west):
         X = np.array(data["X"])
         Y = np.array(data["Y"])
         times = np.array(data["time"])
-        levelset = np.array(data["levelset"])
+        levelset = -np.array(data["levelset"])
     
 
     # TIME SNAPSHOT SELECTION
